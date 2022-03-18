@@ -29,6 +29,9 @@ public class Post extends BaseEntity{
     @Column(name = "post_status")
     private PostStatus status;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Writer writer;
+
     @ManyToMany()
     @JoinTable(
             name = "posts_labels",
